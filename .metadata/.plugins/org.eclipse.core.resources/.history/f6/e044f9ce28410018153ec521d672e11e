@@ -1,0 +1,5 @@
+package pe.edu.cibertec.proyemp.jpa.domain;
+
+public class Proyecto {
+
+}

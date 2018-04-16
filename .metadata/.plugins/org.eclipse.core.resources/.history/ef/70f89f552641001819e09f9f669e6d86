@@ -1,0 +1,192 @@
+package pe.edu.cibertec.proyemp.jpa.test;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import pe.edu.cibertec.proyemp.jpa.domain.Departamento;
+import pe.edu.cibertec.proyemp.jpa.domain.Empleado;
+import pe.edu.cibertec.proyemp.util.UtilFormat;
+
+public class JpaTest {
+	
+	private EntityManager manager;
+	
+	// Inyeccion de dependencias con Constructor
+	public JpaTest(EntityManager manager){
+		this.manager = manager;
+	}
+	
+	public static void main(String[] args) {
+		
+		// Utilizamos patron factory
+		EntityManagerFactory factory = 
+				Persistence.createEntityManagerFactory("MyPersistenceUnit1");
+	
+		// Obtenemos el EntityManager
+		EntityManager em = factory.createEntityManager();
+		
+		
+		JpaTest test = new JpaTest(em);
+		
+		// definimos la transaccion
+		EntityTransaction tx = em.getTransaction();
+		
+		
+		tx.begin();
+		
+			// insert, update y delete
+			//test.crearEmpleados();
+			test.crearEmpleadosEnCascada();
+			test.obtenerEmpleadoPorId(new Long(1));
+		
+		
+		tx.commit();
+		
+		test.listarEmpleados();
+		
+		
+		
+		// Ejercicio 1
+		test.listarEmpleadosPorDepartamentoId(new Long(1));
+		
+		// Ejercicio 2
+		test.obtenerSumaSalarioPorDepartamentoId(new Long(1));
+		
+	}
+
+	
+
+	private void listarEmpleadosPorDepartamentoId(Long id) {
+		List<Empleado> empleados = 
+				manager.createNamedQuery(
+						"Empleado.empleadosPorDepartamentoId", 
+						Empleado.class)
+						.setParameter("depId", id)
+						.getResultList();
+		
+		System.out.println("-- Empleados del departamento (" + id + ") --");
+		for (Empleado empleado : empleados) {
+			System.out.println(empleado);
+		}
+	}
+
+	private void obtenerSumaSalarioPorDepartamentoId(Long id) {
+		
+		BigDecimal suma = manager.createQuery(
+				"select sum(e.salario) from Empleado e "
+				+ "where e.departamento.id = ?", 
+				BigDecimal.class)
+				.setParameter(1, id)
+				.getSingleResult();
+	
+			System.out.println("total departamento (" 
+			+ id 
+			+ "): " + suma);
+	}
+
+	private void obtenerEmpleadoPorId(Long id) {
+
+		// from Empleado where id=?
+		
+		// 1ra forma
+//		Empleado emp = manager.createQuery(
+//				"select e from Empleado e where e.id= ?", Empleado.class)
+//				.setParameter(1, id)
+//				.getSingleResult();
+		
+		// 2d forma
+//		Empleado emp = manager.createQuery(
+//				"select e from Empleado e where e.id= :myId", Empleado.class)
+//				.setParameter("myId", id)
+//				.getSingleResult();
+		
+		// 3ra forma (funciona por id o primary key)
+		Empleado emp = manager.find(Empleado.class, id);
+		
+		// Modificar salario
+		emp.setSalario(new BigDecimal(80000));
+		manager.persist(emp);
+		
+		
+		System.out.println(emp);
+		
+		
+	}
+
+	private void listarEmpleados() {
+		
+		String jql="select e from Empleado e";
+		String jql2 ="from Empleado";
+		
+		List<Empleado> empleados =
+				manager.createNamedQuery("Empleado.All", 
+						Empleado.class).getResultList();
+		
+//		List<Empleado> empleados =
+//				manager.createNativeQuery("SELECT * FROM TB_EMPLEADO", 
+//						Empleado.class).getResultList();
+		
+		for (Empleado empleado : empleados) {
+			System.out.println(empleado);
+		}
+		
+	}
+
+	private void crearEmpleados() {
+		Departamento lima = new Departamento("Lima");	
+		manager.persist(lima);
+		
+		Departamento aqp = new Departamento("Arequipa");	
+		manager.persist(aqp);
+		
+		Empleado emp1 = new Empleado("Luis", new BigDecimal(1200.00),
+					UtilFormat.getFecha(2012, Month.JULY, 14), lima);
+		
+		Empleado emp2 = new Empleado("Marco", new BigDecimal(800.00),
+				UtilFormat.getFecha(2000, Month.APRIL, 18), lima);
+		
+		Empleado emp3 = new Empleado("Maria", new BigDecimal(950.00),
+				UtilFormat.getFecha(2001, Month.DECEMBER, 4), aqp);
+		
+		Empleado emp4 = new Empleado("Carlos", new BigDecimal(1000.00),
+				UtilFormat.getFecha(2002, Month.JULY, 2), aqp);
+		
+		manager.persist(emp1);
+		manager.persist(emp2);
+		manager.persist(emp3);
+		manager.persist(emp4);
+	}
+	
+	private void crearEmpleadosEnCascada() {
+		
+		Departamento lima = new Departamento("Lima");		
+			
+		Empleado emp1 = new Empleado("Luis", new BigDecimal(1200.00),
+					UtilFormat.getFecha(2012, Month.JULY, 14), lima);
+		
+		Empleado emp2 = new Empleado("Marco", new BigDecimal(800.00),
+				UtilFormat.getFecha(2000, Month.APRIL, 18), lima);
+		
+//		List<Empleado> empleados = new ArrayList<Empleado>(); 
+//		empleados.add(emp1);
+//		empleados.add(emp2);
+//		lima.setEmpleados(empleados);
+		
+		lima.setEmpleados(Arrays.asList(emp1,emp2));
+		
+		manager.persist(lima);
+		
+	}
+	
+
+}

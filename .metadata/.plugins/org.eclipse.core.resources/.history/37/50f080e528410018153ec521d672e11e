@@ -1,0 +1,24 @@
+package pe.edu.cibertec.proyemp.jpa.domain;
+
+@Entity
+@Table(name="TB_PROYECTO")
+public class Proyecto {
+	
+	@Id
+	@GeneratedValue
+	@Column(name = "PROY_ID")
+	private Long id;
+	
+	private String nombre;
+	
+	@ManyToMany
+	private Collection<Empleado> empleados;
+	
+	public Proyecto(){}
+	public Proyecto(String nombre) {
+		super();
+		this.nombre = nombre;
+	}
+	
+	}
+

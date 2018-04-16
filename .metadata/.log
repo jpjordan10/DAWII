@@ -1,0 +1,143 @@
+!SESSION 2018-04-15 22:01:08.664 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_PE
+Framework arguments:  -product org.eclipse.epp.package.jee.product --vm C:\Program Files\Java\jdk1.8.0_161\bin\javaw.exe
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product --vm C:\Program Files\Java\jdk1.8.0_161\bin\javaw.exe
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-04-15 22:01:46.129
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Mighty'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2018-04-15 22:06:07.656 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_PE
+Framework arguments:  -product org.eclipse.epp.package.jee.product --vm C:\Program Files\Java\jdk1.8.0_161\bin\javaw.exe
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product --vm C:\Program Files\Java\jdk1.8.0_161\bin\javaw.exe
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-04-15 22:06:43.092
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Mighty'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jpt.jpa.core 4 0 2018-04-15 22:10:32.140
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jpt.common.core.internal.utility.jdt.ASTTools.buildParameterTypes(ASTTools.java:189)
+	at org.eclipse.jpt.common.core.internal.utility.jdt.ASTTools.buildMethodSignature(ASTTools.java:179)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.initializeMethods(SourceType.java:573)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.initialize(SourceType.java:132)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.newInstance(SourceType.java:93)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.buildPrimaryType(SourceTypeCompilationUnit.java:158)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.syncPrimaryType(SourceTypeCompilationUnit.java:128)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.synchronizeWith(SourceTypeCompilationUnit.java:71)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceCompilationUnit.synchronizeWithJavaSource(SourceCompilationUnit.java:157)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.processJavaCompilationUnitDelta(AbstractJpaProject.java:1389)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.processJavaDelta(AbstractJpaProject.java:1225)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.javaElementChanged(AbstractJpaProject.java:1198)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager.javaElementChanged_(InternalJpaProjectManager.java:895)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager$JavaChangeEventHandlerCommand.execute(InternalJpaProjectManager.java:878)
+	at org.eclipse.jpt.common.core.internal.utility.command.JobCommandJob.run(JobCommandJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jpt.jpa.core 4 0 2018-04-15 22:16:52.205
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jpt.common.core.internal.utility.jdt.ASTTools.buildParameterTypes(ASTTools.java:189)
+	at org.eclipse.jpt.common.core.internal.utility.jdt.ASTTools.buildMethodSignature(ASTTools.java:179)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.initializeMethods(SourceType.java:573)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.initialize(SourceType.java:132)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.newInstance(SourceType.java:93)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.buildPrimaryType(SourceTypeCompilationUnit.java:158)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.syncPrimaryType(SourceTypeCompilationUnit.java:128)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.synchronizeWith(SourceTypeCompilationUnit.java:71)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceCompilationUnit.synchronizeWithJavaSource(SourceCompilationUnit.java:157)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.processJavaCompilationUnitDelta(AbstractJpaProject.java:1389)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.processJavaDelta(AbstractJpaProject.java:1225)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.javaElementChanged(AbstractJpaProject.java:1198)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager.javaElementChanged_(InternalJpaProjectManager.java:895)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager$JavaChangeEventHandlerCommand.execute(InternalJpaProjectManager.java:878)
+	at org.eclipse.jpt.common.core.internal.utility.command.JobCommandJob.run(JobCommandJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2018-04-15 22:18:46.421 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_PE
+Framework arguments:  -product org.eclipse.epp.package.jee.product --vm C:\Program Files\Java\jdk1.8.0_161\bin\javaw.exe
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product --vm C:\Program Files\Java\jdk1.8.0_161\bin\javaw.exe
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-04-15 22:18:54.911
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Mighty'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jpt.jpa.core 4 0 2018-04-15 22:22:33.840
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jpt.common.core.internal.utility.jdt.ASTTools.buildParameterTypes(ASTTools.java:189)
+	at org.eclipse.jpt.common.core.internal.utility.jdt.ASTTools.buildMethodSignature(ASTTools.java:179)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.initializeMethods(SourceType.java:573)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.initialize(SourceType.java:132)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.newInstance(SourceType.java:93)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.buildPrimaryType(SourceTypeCompilationUnit.java:158)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.syncPrimaryType(SourceTypeCompilationUnit.java:128)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.synchronizeWith(SourceTypeCompilationUnit.java:71)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceCompilationUnit.synchronizeWithJavaSource(SourceCompilationUnit.java:157)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.processJavaCompilationUnitDelta(AbstractJpaProject.java:1389)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.processJavaDelta(AbstractJpaProject.java:1225)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.javaElementChanged(AbstractJpaProject.java:1198)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager.javaElementChanged_(InternalJpaProjectManager.java:895)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager$JavaChangeEventHandlerCommand.execute(InternalJpaProjectManager.java:878)
+	at org.eclipse.jpt.common.core.internal.utility.command.JobCommandJob.run(JobCommandJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jpt.jpa.core 4 0 2018-04-15 22:28:08.338
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jpt.common.core.internal.utility.jdt.ASTTools.buildParameterTypes(ASTTools.java:189)
+	at org.eclipse.jpt.common.core.internal.utility.jdt.ASTTools.buildMethodSignature(ASTTools.java:179)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.initializeMethods(SourceType.java:573)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.initialize(SourceType.java:132)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceType.newInstance(SourceType.java:93)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.buildPrimaryType(SourceTypeCompilationUnit.java:158)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.syncPrimaryType(SourceTypeCompilationUnit.java:128)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceTypeCompilationUnit.synchronizeWith(SourceTypeCompilationUnit.java:71)
+	at org.eclipse.jpt.common.core.internal.resource.java.source.SourceCompilationUnit.synchronizeWithJavaSource(SourceCompilationUnit.java:157)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.processJavaCompilationUnitDelta(AbstractJpaProject.java:1389)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.processJavaDelta(AbstractJpaProject.java:1225)
+	at org.eclipse.jpt.jpa.core.internal.AbstractJpaProject.javaElementChanged(AbstractJpaProject.java:1198)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager.javaElementChanged_(InternalJpaProjectManager.java:895)
+	at org.eclipse.jpt.jpa.core.internal.InternalJpaProjectManager$JavaChangeEventHandlerCommand.execute(InternalJpaProjectManager.java:878)
+	at org.eclipse.jpt.common.core.internal.utility.command.JobCommandJob.run(JobCommandJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2018-04-15 22:45:37.494 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_PE
+Framework arguments:  -product org.eclipse.epp.package.jee.product --vm C:\Program Files\Java\jdk1.8.0_161\bin\javaw.exe
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product --vm C:\Program Files\Java\jdk1.8.0_161\bin\javaw.exe
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-04-15 22:45:48.491
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Mighty'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jst.jsp.core 4 4 2018-04-15 22:45:59.755
+!MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
